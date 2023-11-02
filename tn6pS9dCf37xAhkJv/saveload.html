@@ -33,7 +33,12 @@ function importLocalStorage(jsonData) {
 
         function loadSave() {
             importLocalStorage(document.getElementById("savefile").value);
-            alert("success! (if you misclicked it's over lmao)");
+            alert("Import successful. (if you misclicked it's over lmao)");
+        }
+
+        function clearSave() {
+            localStorage.clear();
+            alert("Save data successfully cleared.");
         }
     </script>
 </head>
@@ -45,4 +50,5 @@ function importLocalStorage(jsonData) {
     <br>
     <button type="button" onclick="showSave()">Show save file</button>
     <button type="button" onclick="loadSave()">Load save file</button>
+    <button type="button" onclick="clearSave()">Clear save file</button>
 </body>
