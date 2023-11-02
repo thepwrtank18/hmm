@@ -3,12 +3,36 @@
     <title>Run 3 Save/Load</title>
 
     <script>
+
+function exportLocalStorage() {
+    var localStorageData = {};
+
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        var value = localStorage.getItem(key);
+
+        localStorageData[key] = value;
+    }
+
+    var jsonData = JSON.stringify(localStorageData);
+    return jsonData;
+}
+
+function importLocalStorage(jsonData) {
+    var localStorageData = JSON.parse(jsonData);
+
+    for (var key in localStorageData) {
+        if (localStorageData.hasOwnProperty(key)) {
+            localStorage.setItem(key, localStorageData[key]);
+        }
+    }
+}
         function showSave() {
-            document.getElementById("savefile").value = localStorage.getItem("/tn6pS9dCf37xAhkJv/:Run3");
+            document.getElementById("savefile").value = exportLocalStorage();
         }
 
         function loadSave() {
-            localStorage.setItem("/tn6pS9dCf37xAhkJv/:Run3", document.getElementById("savefile").value);
+            importLocalStorage(document.getElementById("savefile").value);
             alert("success! (if you misclicked it's over lmao)");
         }
     </script>
