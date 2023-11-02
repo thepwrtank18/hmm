@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Run 3 Save/Load</title>
+
+    <script>
+        function showSave() {
+            document.getElementById("savefile").value = localStorage.getItem("/tn6pS9dCf37xAhkJv/:Run3");
+        }
+
+        function loadSave() {
+            localStorage.getItem("/tn6pS9dCf37xAhkJv/:Run3") = document.getElementById("savefile").value;
+            alert("success! (if you misclicked it's over lmao)");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Save and Load</h1>
+    <label for="savefile">Save file: </label>
+    <input type="text" id="savefile" name="savefile">
+    <button type="button" onclick="showSave()">Show save file</button>
+    <button type="button" onclick="">Load save file</button>
+</body>
