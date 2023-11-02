@@ -8,7 +8,7 @@
         }
 
         function loadSave() {
-            localStorage.getItem("/tn6pS9dCf37xAhkJv/:Run3") = document.getElementById("savefile").value;
+            localStorage.setItem("/tn6pS9dCf37xAhkJv/:Run3", document.getElementById("savefile").value);
             alert("success! (if you misclicked it's over lmao)");
         }
     </script>
@@ -20,5 +20,5 @@
     <textarea type="text" id="savefile" name="savefile" style="height:200px;width:600px;"></textarea>
     <br>
     <button type="button" onclick="showSave()">Show save file</button>
-    <button type="button" onclick="">Load save file</button>
+    <button type="button" onclick="loadSave()">Load save file</button>
 </body>
